@@ -27,3 +27,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 # javascript_watcher
 # javascript_watcher
 # javascript_watcher
+# javascript_watcher
