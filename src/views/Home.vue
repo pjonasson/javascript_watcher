@@ -1,10 +1,12 @@
 <template>
   <div class="home">
-    <h1>Javascript Watcher</h1>
+    <h1>Javascript Framework Watcher</h1>
+
     <h2>Vue</h2>
-    <h5>Stars: {{ vue.watchers }}</h5>
-    <h5>Watchers: {{ vue.subscribers_count }}</h5>
-    <h5>Forks: {{ vue.forks }}</h5>
+    <h5>Stars: {{ vueWatcher[0] }}</h5>
+    <h5>Watchers: {{ vueSubscribers }}</h5>
+    <h5>Forks: {{ vueForks }}</h5>
+
     <h2>Angular</h2>
     <h5>Stars: {{ angular.watchers }}</h5>
     <h5>Watchers: {{ angular.subscribers_count }}</h5>
@@ -21,6 +23,7 @@
     <h5>Stars: {{ react.watchers }}</h5>
     <h5>Watchers: {{ react.subscribers_count }}</h5>
     <h5>Forks: {{ react.forks }}</h5>
+    -->
   </div>
 </template>
 
@@ -38,15 +41,29 @@ export default {
       ember: {},
       svelte: {},
       react: {},
+      vueWatcher: [],
+      vueSubscribers: [],
+      vueForks: [],
     };
   },
-  created: function () {
-    this.gitHubIndexVue();
-    this.gitHubIndexAngular();
-    this.gitHubIndexEmber();
-    this.gitHubIndexSvelte();
-    this.gitHubIndexReact();
+  async created() {
+    const vue = await axios.get("https://api.github.com/repos/vuejs/vue");
+    console.log("Vue data", vue.data);
+    this.vueWatcher.push(vue.data.watchers);
+    this.vueSubscribers.push(vue.data.subscribers_count);
+    this.vueForks.push(vue.data.forks);
+    console.log(this.vueWatcher, this.vueSubscribers, this.vueForks);
+
+    const angular = await axios.get("https://api.github.com/repos/angular/angular.js");
+    console.log("Angular data", angular.data);
+    const ember = await axios.get("https://api.github.com/repos/emberjs/ember.js");
+    console.log("Ember data", ember.data);
+    const svelte = await axios.get("https://api.github.com/repos/sveltejs/svelte");
+    console.log("Svelte data", svelte.data);
+    const react = await axios.get("https://api.github.com/repos/facebook/react");
+    console.log("React data", react.data);
   },
+
   methods: {
     gitHubIndexVue: function () {
       axios.get("https://api.github.com/repos/vuejs/vue").then((response) => {
