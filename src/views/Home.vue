@@ -5,7 +5,7 @@
       <div class="block col-lg-4">
         <h2>Stars</h2>
         <pure-vue-chart
-          class="animate__bounceIn"
+          class=""
           v-if="watchers.length > 0"
           :max-y-axis="200000"
           :show-y-axis="true"
@@ -69,28 +69,44 @@
         </pure-vue-chart>
       </div>
     </div>
-
-    <h2>Vue</h2>
-    <h5>&#11088;'s: {{ vueWatcher[0] }}</h5>
-    <h5>&#128064;'s: {{ vueSubscribers[0] }}</h5>
-    <h5>&#9282;'s: {{ vueForks[0] }}</h5>
-
-    <h2>Angular</h2>
-    <h5>Stars: {{ angularWatcher[0] }}</h5>
-    <h5>Watchers: {{ angularSubscribers[0] }}</h5>
-    <h5>Forks: {{ angularForks[0] }}</h5>
-    <h2>Ember</h2>
-    <h5>Stars: {{ emberWatcher[0] }}</h5>
-    <h5>Watchers: {{ emberSubscribers[0] }}</h5>
-    <h5>Forks: {{ emberForks[0] }}</h5>
-    <h2>Svelte</h2>
-    <h5>Stars: {{ svelteWatcher[0] }}</h5>
-    <h5>Watchers: {{ svelteSubscribers[0] }}</h5>
-    <h5>Forks: {{ svelteForks[0] }}</h5>
-    <h2>React</h2>
-    <h5>Stars: {{ reactWatcher[0] }}</h5>
-    <h5>Watchers: {{ reactSubscribers[0] }}</h5>
-    <h5>Forks: {{ reactForks[0] }}</h5>
+    <div class="container text-align-center">
+      <div class="block col-lg-2">
+        <h2>Vue</h2>
+        <h5>&#11088;s: {{ vueWatcher[0] }}</h5>
+        <h5>&#128064;s: {{ vueSubscribers[0] }}</h5>
+        <h5>&#9282;s: {{ vueForks[0] }}</h5>
+      </div>
+      <div class="block col-lg-2">
+        <h2>Angular</h2>
+        <h5>&#11088;s: {{ angularWatcher[0] }}</h5>
+        <h5>&#128064;s: {{ angularSubscribers[0] }}</h5>
+        <h5>&#9282;s: {{ angularForks[0] }}</h5>
+      </div>
+      <div class="block col-lg-2">
+        <h2>Ember</h2>
+        <h5>&#11088;s: {{ emberWatcher[0] }}</h5>
+        <h5>&#128064;s: {{ emberSubscribers[0] }}</h5>
+        <h5>&#9282;s: {{ emberForks[0] }}</h5>
+      </div>
+      <div class="block col-lg-2">
+        <h2>Svelte</h2>
+        <h5>&#11088;s: {{ svelteWatcher[0] }}</h5>
+        <h5>&#128064;s: {{ svelteSubscribers[0] }}</h5>
+        <h5>&#9282;s: {{ svelteForks[0] }}</h5>
+      </div>
+      <div class="block col-lg-2">
+        <h2>React</h2>
+        <h5>&#11088;s: {{ reactWatcher[0] }}</h5>
+        <h5>&#128064;s: {{ reactSubscribers[0] }}</h5>
+        <h5>&#9282;s: {{ reactForks[0] }}</h5>
+      </div>
+      <div class="block col-lg-2">
+        <h2>Totals</h2>
+        <h5>&#11088;s: {{ watchersSum[0] }}</h5>
+        <h5>&#128064;s: {{ subscribersSum[0] }}</h5>
+        <h5>&#9282;s: {{ forksSum[0] }}</h5>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -134,6 +150,9 @@ export default {
       watchers: [],
       subscribers: [],
       forks: [],
+      watchersSum: [],
+      subscribersSum: [],
+      forksSum: [],
     };
   },
   async created() {
@@ -178,6 +197,9 @@ export default {
     this.forks.push(react.data.forks);
     this.reactForks.push(react.data.forks);
     console.log("React data", react.data);
+    this.watchersTotal();
+    this.subscribersTotal();
+    this.forksTotal();
   },
 
   methods: {
@@ -210,6 +232,30 @@ export default {
         this.react = response.data;
         console.log("React stats", this.react);
       });
+    },
+    watchersTotal: function () {
+      var sum = 0;
+      for (let i = 0; i < this.watchers.length; i++) {
+        sum += this.watchers[i];
+      }
+      this.watchersSum.push(sum);
+      console.log(sum);
+    },
+    subscribersTotal: function () {
+      var sum = 0;
+      for (let i = 0; i < this.subscribers.length; i++) {
+        sum += this.subscribers[i];
+      }
+      this.subscribersSum.push(sum);
+      console.log(sum);
+    },
+    forksTotal: function () {
+      var sum = 0;
+      for (let i = 0; i < this.forks.length; i++) {
+        sum += this.forks[i];
+      }
+      this.forksSum.push(sum);
+      console.log(sum);
     },
   },
 };
