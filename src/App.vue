@@ -48,4 +48,9 @@
   </div>
 </template>
 
-<style></style>
+<style>
+#app {
+  margin-top: 50px;
+  margin-left: 10px;
+}
+</style>
