@@ -1,65 +1,79 @@
 <template>
   <div class="home">
-    <h1>Javascript Framework Watcher</h1>
-    <pure-vue-chart
-      v-if="watchers.length > 0"
-      :max-y-axis="200000"
-      :show-y-axis="true"
-      :show-x-axis="true"
-      :points="watchers"
-      :width="400"
-      :height="300"
-      barColor="lightblue"
-    >
-      <template v-slot:label="{ barIndex, midPoint, yLabelOffset }">
-        <text v-if="barIndex === 0" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Vue</text>
-        <text v-if="barIndex === 1" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Angular</text>
-        <text v-if="barIndex === 2" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Ember</text>
-        <text v-if="barIndex === 3" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Svelte</text>
-        <text v-if="barIndex === 4" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">React</text>
-      </template>
-    </pure-vue-chart>
-    <pure-vue-chart
-      v-if="watchers.length > 0"
-      :max-y-axis="8000"
-      :show-y-axis="true"
-      :show-x-axis="true"
-      :points="subscribers"
-      :width="400"
-      :height="300"
-      barColor="green"
-    >
-      <template v-slot:label="{ barIndex, midPoint, yLabelOffset }">
-        <text v-if="barIndex === 0" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Vue</text>
-        <text v-if="barIndex === 1" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Angular</text>
-        <text v-if="barIndex === 2" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Ember</text>
-        <text v-if="barIndex === 3" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Svelte</text>
-        <text v-if="barIndex === 4" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">React</text>
-      </template>
-    </pure-vue-chart>
-    <pure-vue-chart
-      v-if="watchers.length > 0"
-      :max-y-axis="40000"
-      :show-y-axis="true"
-      :show-x-axis="true"
-      :points="forks"
-      :width="400"
-      :height="300"
-      barColor="orange"
-    >
-      <template v-slot:label="{ barIndex, midPoint, yLabelOffset }">
-        <text v-if="barIndex === 0" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Vue</text>
-        <text v-if="barIndex === 1" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Angular</text>
-        <text v-if="barIndex === 2" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Ember</text>
-        <text v-if="barIndex === 3" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Svelte</text>
-        <text v-if="barIndex === 4" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">React</text>
-      </template>
-    </pure-vue-chart>
+    <h1 class="animate__bounceIn">Javascript Framework Watcher</h1>
+    <div class="container">
+      <div class="block col-lg-4">
+        <h2>Stars</h2>
+        <pure-vue-chart
+          class="animate__bounceIn"
+          v-if="watchers.length > 0"
+          :max-y-axis="200000"
+          :show-y-axis="true"
+          :show-x-axis="true"
+          :points="watchers"
+          :width="400"
+          :height="300"
+          barColor="lightblue"
+        >
+          <template v-slot:label="{ barIndex, midPoint, yLabelOffset }">
+            <text v-if="barIndex === 0" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Vue</text>
+            <text v-if="barIndex === 1" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Angular</text>
+            <text v-if="barIndex === 2" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Ember</text>
+            <text v-if="barIndex === 3" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Svelte</text>
+            <text v-if="barIndex === 4" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">React</text>
+          </template>
+        </pure-vue-chart>
+      </div>
+      <div class="block col-lg-4">
+        <h2>Watchers</h2>
+        <pure-vue-chart
+          class="aanimate__fadeInLeftBig"
+          v-if="watchers.length > 0"
+          :max-y-axis="8000"
+          :show-y-axis="true"
+          :show-x-axis="true"
+          :points="subscribers"
+          :width="400"
+          :height="300"
+          barColor="green"
+        >
+          <template v-slot:label="{ barIndex, midPoint, yLabelOffset }">
+            <text v-if="barIndex === 0" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Vue</text>
+            <text v-if="barIndex === 1" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Angular</text>
+            <text v-if="barIndex === 2" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Ember</text>
+            <text v-if="barIndex === 3" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Svelte</text>
+            <text v-if="barIndex === 4" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">React</text>
+          </template>
+        </pure-vue-chart>
+      </div>
+      <div class="block col-lg-4">
+        <h2>Forks</h2>
+        <pure-vue-chart
+          class="animate__fadeInLeftBig"
+          v-if="watchers.length > 0"
+          :max-y-axis="40000"
+          :show-y-axis="true"
+          :show-x-axis="true"
+          :points="forks"
+          :width="400"
+          :height="300"
+          barColor="orange"
+        >
+          <template v-slot:label="{ barIndex, midPoint, yLabelOffset }">
+            <text v-if="barIndex === 0" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Vue</text>
+            <text v-if="barIndex === 1" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Angular</text>
+            <text v-if="barIndex === 2" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Ember</text>
+            <text v-if="barIndex === 3" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Svelte</text>
+            <text v-if="barIndex === 4" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">React</text>
+          </template>
+        </pure-vue-chart>
+      </div>
+    </div>
 
     <h2>Vue</h2>
-    <h5>Stars: {{ vueWatcher[0] }}</h5>
-    <h5>Watchers: {{ vueSubscribers[0] }}</h5>
-    <h5>Forks: {{ vueForks[0] }}</h5>
+    <h5>&#11088;'s: {{ vueWatcher[0] }}</h5>
+    <h5>&#128064;'s: {{ vueSubscribers[0] }}</h5>
+    <h5>&#9282;'s: {{ vueForks[0] }}</h5>
 
     <h2>Angular</h2>
     <h5>Stars: {{ angularWatcher[0] }}</h5>
@@ -84,6 +98,7 @@
 // @ is an alias to /src
 import axios from "axios";
 import PureVueChart from "pure-vue-chart";
+import "animate.css";
 
 export default {
   name: "Home",

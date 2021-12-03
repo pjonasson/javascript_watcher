@@ -50,7 +50,16 @@
 
 <style>
 #app {
-  margin-top: 50px;
+  margin-top: 75px;
   margin-left: 10px;
+}
+.block {
+  flex: 0 0 auto;
+}
+.container {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 </style>
