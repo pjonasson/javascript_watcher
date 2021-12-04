@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <h1 class="animate__bounceIn">Javascript Framework Watcher</h1>
+    <div class="container1">
+      <h1 class="title animate__bounceIn">Javascript Framework Watcher</h1>
+    </div>
     <div class="container">
       <div class="block col-lg-4">
         <h2>Stars</h2>
@@ -35,7 +37,7 @@
           :points="subscribers"
           :width="400"
           :height="300"
-          barColor="green"
+          barColor="lightgreen"
         >
           <template v-slot:label="{ barIndex, midPoint, yLabelOffset }">
             <text v-if="barIndex === 0" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Vue</text>
@@ -57,7 +59,7 @@
           :points="forks"
           :width="400"
           :height="300"
-          barColor="orange"
+          barColor="lightpink"
         >
           <template v-slot:label="{ barIndex, midPoint, yLabelOffset }">
             <text v-if="barIndex === 0" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Vue</text>
@@ -71,31 +73,41 @@
     </div>
     <div class="container text-align-center">
       <div class="block col-lg-2">
-        <h2>Vue</h2>
+        <h2>
+          <a href="https://github.com/vuejs/vue" style="text-decoration: none">Vue</a>
+        </h2>
         <h5>&#11088;s: {{ vueWatcher[0] }}</h5>
         <h5>&#128064;s: {{ vueSubscribers[0] }}</h5>
         <h5>&#9282;s: {{ vueForks[0] }}</h5>
       </div>
       <div class="block col-lg-2">
-        <h2>Angular</h2>
+        <h2>
+          <a href="https://github.com/angular/angular.js" style="text-decoration: none">Angular</a>
+        </h2>
         <h5>&#11088;s: {{ angularWatcher[0] }}</h5>
         <h5>&#128064;s: {{ angularSubscribers[0] }}</h5>
         <h5>&#9282;s: {{ angularForks[0] }}</h5>
       </div>
       <div class="block col-lg-2">
-        <h2>Ember</h2>
+        <h2>
+          <a href="https://github.com/emberjs/ember.js/" style="text-decoration: none">Ember</a>
+        </h2>
         <h5>&#11088;s: {{ emberWatcher[0] }}</h5>
         <h5>&#128064;s: {{ emberSubscribers[0] }}</h5>
         <h5>&#9282;s: {{ emberForks[0] }}</h5>
       </div>
       <div class="block col-lg-2">
-        <h2>Svelte</h2>
+        <h2>
+          <a href="https://github.com/sveltejs/svelte" style="text-decoration: none">Svelte</a>
+        </h2>
         <h5>&#11088;s: {{ svelteWatcher[0] }}</h5>
         <h5>&#128064;s: {{ svelteSubscribers[0] }}</h5>
         <h5>&#9282;s: {{ svelteForks[0] }}</h5>
       </div>
       <div class="block col-lg-2">
-        <h2>React</h2>
+        <h2>
+          <a href="https://github.com/facebook/react" style="text-decoration: none">React</a>
+        </h2>
         <h5>&#11088;s: {{ reactWatcher[0] }}</h5>
         <h5>&#128064;s: {{ reactSubscribers[0] }}</h5>
         <h5>&#9282;s: {{ reactForks[0] }}</h5>
