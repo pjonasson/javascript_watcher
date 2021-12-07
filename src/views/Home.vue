@@ -7,7 +7,6 @@
       <div class="block col-lg-4">
         <h2>Stars</h2>
         <pure-vue-chart
-          class=""
           v-if="watchers.length > 0"
           :max-y-axis="250000"
           :show-y-axis="true"
@@ -16,6 +15,7 @@
           :width="400"
           :height="300"
           barColor="lightblue"
+          animationDuration="2.5"
         >
           <template v-slot:label="{ barIndex, midPoint, yLabelOffset }">
             <text v-if="barIndex === 0" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Vue</text>
@@ -29,7 +29,6 @@
       <div class="block col-lg-4">
         <h2>Watchers</h2>
         <pure-vue-chart
-          class="aanimate__fadeInLeftBig"
           v-if="watchers.length > 0"
           :max-y-axis="8000"
           :show-y-axis="true"
@@ -38,6 +37,7 @@
           :width="400"
           :height="300"
           barColor="lightgreen"
+          animationDuration="2.5"
         >
           <template v-slot:label="{ barIndex, midPoint, yLabelOffset }">
             <text v-if="barIndex === 0" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Vue</text>
@@ -51,7 +51,6 @@
       <div class="block col-lg-4">
         <h2>Forks</h2>
         <pure-vue-chart
-          class="animate__fadeInLeftBig"
           v-if="watchers.length > 0"
           :max-y-axis="50000"
           :show-y-axis="true"
@@ -60,6 +59,7 @@
           :width="400"
           :height="300"
           barColor="lightpink"
+          animationDuration="2.5"
         >
           <template v-slot:label="{ barIndex, midPoint, yLabelOffset }">
             <text v-if="barIndex === 0" :x="midPoint" :y="`${yLabelOffset + 10}px`" text-anchor="middle">Vue</text>
