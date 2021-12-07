@@ -76,6 +76,11 @@
         <h2>
           <a href="https://github.com/vuejs/vue">Vue</a>
         </h2>
+        <img
+          class="logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/440px-Vue.js_Logo_2.svg.png"
+          alt=""
+        />
         <h5>&#11088;s: {{ vueWatcher[0] }}</h5>
         <h5>&#128064;s: {{ vueSubscribers[0] }}</h5>
         <h5>&#9282;s: {{ vueForks[0] }}</h5>
@@ -84,6 +89,11 @@
         <h2>
           <a href="https://github.com/angular/angular.js">Angular</a>
         </h2>
+        <img
+          class="logo"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvDdnYY_s2WR_D0jYWwESo2AL9oOHgeFxUtIARamqFFn6qgHUSVdHPdP9ECz-TwhhKZ8Y&usqp=CAU"
+          alt=""
+        />
         <h5>&#11088;s: {{ angularWatcher[0] }}</h5>
         <h5>&#128064;s: {{ angularSubscribers[0] }}</h5>
         <h5>&#9282;s: {{ angularForks[0] }}</h5>
@@ -92,6 +102,11 @@
         <h2>
           <a href="https://github.com/emberjs/ember.js/">Ember</a>
         </h2>
+        <img
+          class="logo"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpglW6qWmm8dA-gAq6kiZawzAtbl-AL5sLUG9hsE0n51F188QpkC3j4zCbfLvAiLlcIAo&usqp=CAU"
+          alt=""
+        />
         <h5>&#11088;s: {{ emberWatcher[0] }}</h5>
         <h5>&#128064;s: {{ emberSubscribers[0] }}</h5>
         <h5>&#9282;s: {{ emberForks[0] }}</h5>
@@ -100,6 +115,11 @@
         <h2>
           <a href="https://github.com/sveltejs/svelte">Svelte</a>
         </h2>
+        <img
+          class="logo"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe1WQvtM9H-SYQs-0eC68aANfML_U-7T61eaq5XadTH8GXd0vcddbE2RUm0KidpqWBDtY&usqp=CAU"
+          alt=""
+        />
         <h5>&#11088;s: {{ svelteWatcher[0] }}</h5>
         <h5>&#128064;s: {{ svelteSubscribers[0] }}</h5>
         <h5>&#9282;s: {{ svelteForks[0] }}</h5>
@@ -108,12 +128,22 @@
         <h2>
           <a href="https://github.com/facebook/react">React</a>
         </h2>
+        <img
+          class="logo"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS18-Pl_EL3TuQIrxLsgthdm9apJlkrXa8cty4Km6qr9HHCUw00ZxSmoRz2tpPSqSKmSS8&usqp=CAU"
+          alt=""
+        />
         <h5>&#11088;s: {{ reactWatcher[0] }}</h5>
         <h5>&#128064;s: {{ reactSubscribers[0] }}</h5>
         <h5>&#9282;s: {{ reactForks[0] }}</h5>
       </div>
       <div class="block col-lg-2">
         <h2>Totals</h2>
+        <img
+          class="logo"
+          src="https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png"
+          alt=""
+        />
         <h5>&#11088;s: {{ watchersSum[0] }}</h5>
         <h5>&#128064;s: {{ subscribersSum[0] }}</h5>
         <h5>&#9282;s: {{ forksSum[0] }}</h5>
@@ -293,5 +323,14 @@ h1 {
 }
 h2 {
   font-family: monospace, monaco;
+}
+
+.logo {
+  height: 70px;
+  width: 70px;
+  padding-bottom: 10px;
+}
+.block {
+  text-align: center;
 }
 </style>
