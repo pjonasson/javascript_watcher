@@ -9,7 +9,7 @@
         <pure-vue-chart
           class=""
           v-if="watchers.length > 0"
-          :max-y-axis="200000"
+          :max-y-axis="250000"
           :show-y-axis="true"
           :show-x-axis="true"
           :points="watchers"
@@ -53,7 +53,7 @@
         <pure-vue-chart
           class="animate__fadeInLeftBig"
           v-if="watchers.length > 0"
-          :max-y-axis="40000"
+          :max-y-axis="50000"
           :show-y-axis="true"
           :show-x-axis="true"
           :points="forks"
