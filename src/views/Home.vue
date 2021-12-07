@@ -74,7 +74,7 @@
     <div class="container text-align-center">
       <div class="block col-lg-2">
         <h2>
-          <a href="https://github.com/vuejs/vue" style="text-decoration: none">Vue</a>
+          <a href="https://github.com/vuejs/vue">Vue</a>
         </h2>
         <h5>&#11088;s: {{ vueWatcher[0] }}</h5>
         <h5>&#128064;s: {{ vueSubscribers[0] }}</h5>
@@ -82,7 +82,7 @@
       </div>
       <div class="block col-lg-2">
         <h2>
-          <a href="https://github.com/angular/angular.js" style="text-decoration: none">Angular</a>
+          <a href="https://github.com/angular/angular.js">Angular</a>
         </h2>
         <h5>&#11088;s: {{ angularWatcher[0] }}</h5>
         <h5>&#128064;s: {{ angularSubscribers[0] }}</h5>
@@ -90,7 +90,7 @@
       </div>
       <div class="block col-lg-2">
         <h2>
-          <a href="https://github.com/emberjs/ember.js/" style="text-decoration: none">Ember</a>
+          <a href="https://github.com/emberjs/ember.js/">Ember</a>
         </h2>
         <h5>&#11088;s: {{ emberWatcher[0] }}</h5>
         <h5>&#128064;s: {{ emberSubscribers[0] }}</h5>
@@ -98,7 +98,7 @@
       </div>
       <div class="block col-lg-2">
         <h2>
-          <a href="https://github.com/sveltejs/svelte" style="text-decoration: none">Svelte</a>
+          <a href="https://github.com/sveltejs/svelte">Svelte</a>
         </h2>
         <h5>&#11088;s: {{ svelteWatcher[0] }}</h5>
         <h5>&#128064;s: {{ svelteSubscribers[0] }}</h5>
@@ -106,7 +106,7 @@
       </div>
       <div class="block col-lg-2">
         <h2>
-          <a href="https://github.com/facebook/react" style="text-decoration: none">React</a>
+          <a href="https://github.com/facebook/react">React</a>
         </h2>
         <h5>&#11088;s: {{ reactWatcher[0] }}</h5>
         <h5>&#128064;s: {{ reactSubscribers[0] }}</h5>
@@ -129,6 +129,9 @@ import PureVueChart from "pure-vue-chart";
 import "animate.css";
 
 export default {
+  props: {
+    animationDuration: { type: Number, default: 5 },
+  },
   name: "Home",
   components: {
     PureVueChart,
@@ -272,3 +275,23 @@ export default {
   },
 };
 </script>
+
+<style>
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(1, 5, 2);
+  background-color: transparent;
+  text-decoration: none;
+}
+h1 {
+  font-family: monospace, monaco;
+}
+h2 {
+  font-family: monospace, monaco;
+}
+</style>
