@@ -34,7 +34,7 @@
     <footer class="footer py-4 bg-light mt-auto">
       <div class="px-4">
         <div class="d-flex align-items-center justify-content-between small">
-          <div class="text-muted">Copyright &copy; Your Website 2021</div>
+          <div class="text-muted">Copyright &copy; https://inspiring-bartik-816171.netlify.app/</div>
           <div>
             <a href="#">Privacy Policy</a>
             &middot;
